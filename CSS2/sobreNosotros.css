@@ -1,0 +1,514 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+/* ---------- HEADER Y NAVEGACIÓN ---------- */
+header {
+  background-color: #004b23;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav > div {
+  position: relative;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Menú desplegable */
+.menuServicios .desplegable {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0 0 5px 5px;
+  flex-direction: column;
+  z-index: 10;
+  min-width: 180px;
+}
+
+.menuServicios:hover .desplegable {
+  display: flex;
+}
+
+.menuServicios .desplegable a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menuServicios .desplegable div {
+  padding: 10px;
+  transition: background-color 0.2s;
+}
+
+.menuServicios .desplegable div:hover {
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
+/* Buscador */
+.contenedorBusqueda input {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.lupa{
+  padding: 1px, 6px;
+  color: white;
+  height: 20px;
+}
+
+/* Botón "Apóyanos" */
+.apoyanos {
+  background-color: #63c132;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.apoyanos:hover{
+  background-color: #529e29;
+  color: white;
+}
+
+/* ---------- CUERPO ---------- */
+.subtitulo {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.seccion {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cajaIzquierda,
+.cajaDerecha {
+  background-color: #ccc;
+  padding: 20px;
+  flex: 1;
+  max-width: 500px;
+}
+
+.shake-horizontal{
+  text-align: left;
+}
+
+.cajaIzquierda {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carrusel .imagenes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cajaDerecha h3 {
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.grupoFormulario {
+  margin-bottom: 15px;
+}
+
+.grupoFormulario input,
+.grupoFormulario textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.grupoFormulario textarea {
+  height: 100px;
+  resize: none;
+}
+
+.grupoFormulario button {
+  background-color: #999;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ---------- SECCIÓN AFILIACIÓN ---------- */
+.seccionAfiliacion {
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+
+.btnAfiliate {
+  background-color: #63c132;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnAfiliate:hover {
+  background-color: #529e29;
+  color: white;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #ddd;
+  padding: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.iconosSociales {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.iconosSociales a {
+  margin: 0 10px;
+  color: #004b23;
+  transition: color 0.2s;
+}
+
+.iconosSociales a:hover {
+  color: #63c132;
+}
+
+footer img {
+  margin-top: 15px;
+  width: 80px;
+}
+
+/* ANIMACIONES CON ANIMATISS */
+
+.shake-horizontal{
+  animation:shake-horizontal 0.8s linear both
+} @keyframes shake-horizontal{0%,100%{transform:translateX(0)}10%,30%,50%,70%{transform:translateX(-10px)}20%,40%,60%{transform:translateX(10px)}80%{transform:translateX(8px)}90%{transform:translateX(-8px)}}
+
+
+   /* --- Responsive --- */
+@media screen and (max-width: 768px) {
+  .seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .cajaIzquierda,
+  .cajaDerecha {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .cajaIzquierda .carrusel {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .cajaIzquierda .carrusel img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .cajaDerecha h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .cajaDerecha p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .carruselImagenes {
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .carruselImagenes img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .textoBienvenida {
+    max-width: 90%;
+  }
+
+  .texto_1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .texto_2 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  nav a button,
+  .menuServicios > button {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+
+  .contenedorBusqueda {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .contenedorBusqueda input {
+    width: 60%;
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .contenedorBusqueda .lupa {
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
+
+  .apoyanos {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .seccionServicios .subtitulo {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .contenedorServicios {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .servicio {
+    width: 80%;
+    text-align: center;
+  }
+
+  .servicio h3 {
+    font-size: 1.2rem;
+  }
+
+  .imagenServicio img {
+    width: 140px !important;
+  }
+
+  .btnAdquirir {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  .ctaServicios p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 20px;
+  }
+
+  .btnCta {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  footer img {
+    margin-top: 10px;
+  }
+
+  .iconosSociales {
+    margin-top: 10px;
+  }
+
+  .iconosSociales a {
+    margin: 0 8px;
+    font-size: 1.5rem;
+  }
+
+  .contenedorServicios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+}
+
+.servicio {
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.servicio h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.imagenServicio img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.btnAdquirir {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007a5e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btnAdquirir:hover {
+  background-color: #005f49;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+  .contenedorServicios {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .servicio {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .servicio h3 {
+    font-size: 1.2rem;
+  }
+
+  .btnAdquirir {
+    font-size: 1rem;
+    padding: 8px 18px;
+  }
+}
+}
